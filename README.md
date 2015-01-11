@@ -415,7 +415,7 @@ timing.plot_function_time_against_n( {f1, f2}, 10:10:1000 )
 
 **Save as**: figures/e2_3_abstraction_cost.pdf
 
-This allows you to quite accurately inferr the overead involved
+This allows you to quite accurately infer the overead involved
 in creating an anonymous function. The overhead in matlab is
 quite high, so we need to make sure that:
 
@@ -525,7 +525,7 @@ how do you explain the behaviour of the parallel version?
 ### E3.2 - Parallelising the inner loop
 
 Create another new function `+render/apply_scalar_par_outer.m`, based
-on the original `render.apply_scalar`. Modify the function so that
+on the original `render.apply_scalar` . Modify the function so that
 the outer loop over y is now a `parfor` loop, but the inner
 x loop is _not_ a `parfor` (again, extremely simple).
 
@@ -617,8 +617,8 @@ E4 - Vectorising
 
 Parallelism is sometimes a cheap way of getting a speed-up,
 but a more classic, and often more effective way is
-vectorisation. The fundamental idea of vectorisation is
-to apply a function to many independent pieces of data
+[vectorisation](http://uk.mathworks.com/help/matlab/matlab_prog/vectorization.html).
+The fundamental idea of vectorisation is to apply a function to many independent pieces of data
 at the same time, rather than calling the function on
 each piece of data sequentially.
 
@@ -646,7 +646,7 @@ to the low-level architecture of GPUs.
 
 ### E4.1 - Vectorising the mapping
 
-Create a new function called '+render/apply_vector_rows.m', based
+Create a new function called `+render/apply_vector_rows.m`, based
 on apply_scalar. This function will do the same basic operation
 as before, but will now pass rows of pixels to the kernel, so
 the documentation should be updated (the documentation hints
@@ -801,8 +801,7 @@ to add too much optimisation, think of it as simply pushing the
 x loop from scalar_map "into" median_scalar.
 
 By inference from the function definitions, the following code should
-work, and the assertion should hold (ok, I'm still nudging
-towards correctness):
+work, and the assertion should hold:
 
 ``` matlab
 im=rand(100);
@@ -813,7 +812,7 @@ assert(all(all(out1==out2)));
 
 Hints:
 
-- You need to inferr the border parameter, which you can calculate
+- You need to infer the border parameter, which you can calculate
   from the height of the input pixels.
 
 As always, we want to know about the cost/benefit of this. While
@@ -921,7 +920,7 @@ way of viewing things is that vectorisation exploits data-parallelism
 at a fine-grain instruction level, while parallelism exploits
 it at a coarse-grain thread or process level. As vectorisation
 has lower startup overhead, we generally want to make sure
-that parallelism is wrapper _around_ vectorisation.
+that parallelism is wrapped _around_ vectorisation.
 
 ### 5.1 - Simple parallelism and vectorisation
 
@@ -954,10 +953,10 @@ row, which is large compared to the faster vectorised row
 effects. Currently the loops like:
 
    parfor y
-       Overhead: parallel
-       Overhead: interpreter
-       Overhead: abstraction
-       Work: vectorised function
+      Overhead: parallel
+      Overhead: interpreter
+      Overhead: abstraction
+      Work: vectorised function
 
 The parallel overhead per iteration is very high, and we
 simply don't need 100s of parallel iterations. It is quite
@@ -972,9 +971,9 @@ inner iterations:
    parfor yCoarse
       Overhead: parallel
       for y=yFine
-        Overhead: interpreter
-        Overhead: abstraction
-        Work: vectorised function
+         Overhead: interpreter
+         Overhead: abstraction
+         Work: vectorised function
 
 The outer (coarse) loop should execute 16 iterations, i.e. it
 creates 16 parallel pieces of work, each handling 1/16 of the
