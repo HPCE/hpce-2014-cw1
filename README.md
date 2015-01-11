@@ -514,7 +514,7 @@ has a minute timeout, as you want to see the entire graph):
 ``` matlab
 f1=@(n)( render.apply_scalar( @effects.median_scalar, n, rand(50,50) ));
 f2=@(n)( render.apply_scalar_par_inner( @effects.median_scalar, n, rand(50,50) ));
-timing.plot_function_time_against_n({f1,f2}, 0:50, 60);
+timing.plot_function_time_against_n({f1,f2}, 0:24, 60);
 ```
 
 **Save as**: figures/e3_1_median_scaling.pdf
@@ -778,7 +778,7 @@ in function execution time?:
 f1=@(n)( render.apply_scalar( @effects.scharr_scalar, 1, rand(n) ));
 f2=@(n)( render.apply_scalar( @effects.scharr_vector, 1, rand(n) ));
 f3=@(n)( render.apply_vector_rows( @effects.scharr_vector, 1, rand(n) ));
-timing.plot_function_time_against_n({f1,f2,f3}, 1:1000, 5);
+timing.plot_function_time_against_n({f1,f2,f3}, 10:10:1000, 5);
 ```
 
 **Save as**: figures/e4_2_scharr_scaling.pdf
@@ -838,21 +838,21 @@ timing.plot_function_time_against_n({f1,f2},1:10 );
 The tradeoff between these two methods is essentially whether
 the interpreted x loop is in apply_scalar, outside the abstraction:
 
-   for y
-      Overhead: interpreter
-      for x
-         Overhead: interpreter
-         Overhead: f -> median_scalar abstraction 
-         Work: extract pixels, run median
+    for y
+        Overhead: interpreter
+        for x
+            Overhead: interpreter
+            Overhead: f -> median_scalar abstraction 
+            Work: extract pixels, run median
 
 or to have the x loop inside the abstraction:
 
-   for y   
-      Overhead: interpreter
-      Overhead: f -> median_vector abstraction 
-      for x
-         Overhead: interpreter
-         Work: extract pixels, run median
+    for y   
+        Overhead: interpreter
+        Overhead: f -> median_vector abstraction 
+        for x
+            Overhead: interpreter
+            Work: extract pixels, run median
 
 Visually adding up the overhead, which one comes out better?
 Does it match the results?
@@ -910,7 +910,7 @@ Equally interesting is what happens when the window size is changed:
 f1=@(n)( render.apply_vector_rows(@effects.median_vector_fake, n, rand(100)) );
 f2=@(n)( render.apply_vector_rows(@effects.median_vector, n, rand(100)) );
 timing.plot_function_time_against_n({f1,f2}, 1:50, 10);
-``` matlab
+```
 
 5 - Combining vectorisation and parallelism
 -------------------------------------------
@@ -952,11 +952,11 @@ The parallel version still incurrs a lot of overhead for each
 row, which is large compared to the faster vectorised row
 effects. Currently the loops like:
 
-   parfor y
-      Overhead: parallel
-      Overhead: interpreter
-      Overhead: abstraction
-      Work: vectorised function
+    parfor y
+        Overhead: parallel
+        Overhead: interpreter
+        Overhead: abstraction
+        Work: vectorised function
 
 The parallel overhead per iteration is very high, and we
 simply don't need 100s of parallel iterations. It is quite
@@ -968,12 +968,12 @@ is based on apply_vector_rows_par_outer, but which splits
 the x loop into (at most) 16 parallel outer iterations, and w/16 sequential
 inner iterations:
 
-   parfor yCoarse
-      Overhead: parallel
-      for y=yFine
-         Overhead: interpreter
-         Overhead: abstraction
-         Work: vectorised function
+    parfor yCoarse
+        Overhead: parallel
+        for y=yFine
+            Overhead: interpreter
+            Overhead: abstraction
+            Work: vectorised function
 
 The outer (coarse) loop should execute 16 iterations, i.e. it
 creates 16 parallel pieces of work, each handling 1/16 of the
