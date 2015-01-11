@@ -298,7 +298,7 @@ output pixel using the mapping:
     G = sqrt(G_x^2+G_y^2));
     pixel = min(G/8, 1);
     
-An example of reference output is included as '+effects/cameraman.scharr.ref.png',
+An example of reference output is included as `+effects/cameraman.scharr.ref.png`,
 which I generated using the code:
 
 ``` matlab
@@ -336,7 +336,7 @@ The median kernel replaces each pixel with the median of
 the pixels in the window, which removes noise, but tends
 to retain edges: http://en.wikipedia.org/wiki/Median_filter
 
-Add a function '+effects/median_filter.m` which implements a per-pixel
+Add a function `+effects/median_filter.m` which implements a per-pixel
 median filter. The filter should be able to deal with any
 odd-sized window, e.g. 1x1 (border=0), 3x3 (border=1), 11x11 (border=5).
 
@@ -363,14 +363,14 @@ imshow( render.apply_scalar( @effects.median_scalar, 6, im ) );
 
 Hints:
 
-- There is a function called `median` supplied by matlab, but
-  it does not behave in the way we want for 2D matrices.
+- There is a function called [`median`](http://uk.mathworks.com/help/matlab/ref/median.html)
+  supplied by matlab, but it does not behave in the way we want for 2D matrices.
 
-- You can use `reshape` to flatten the input pixels, for example
-  turning a 3x3 array into a 1x9 array for input to `median`.
+- You can use [`reshape`](http://uk.mathworks.com/help/matlab/ref/reshape.html) to
+  flatten the input pixels, for example turning a 3x3 array into a 1x9 array for input to `median`.
   
-- Or matlab also allows linear indexing into two dimensional arrays
-  (see the matlab docs). For example, try `x=[1 0 1; 2 0 2; 9 9 9], x(1:9)`.
+- Or matlab also allows [linear indexing](http://uk.mathworks.com/help/matlab/math/matrix-indexing.html)
+  into two dimensional arrays. For example, try `x=[1 0 1; 2 0 2; 9 9 9], x(1:9)`.
 
 Because the median filter has another (implicit) parameter, you are
 now in a position to explore the scaling in execution time
@@ -431,11 +431,11 @@ quite high, so we need to make sure that:
 E3 - Parallelising loops
 -------------------------------
 
-Matlab contains a `parfor` loop, which allows the iterations of certain
-types of `for` loops to be executed in parallel. The documentation for
-matlab goes into much more detail; have a quick read, but don't worry
-about diving too deeply into the details. The essential property we
-need is that a statement of the form:
+Matlab contains a [`parfor`](http://uk.mathworks.com/help/distcomp/parfor.html)
+loop, which allows the iterations of certain types of `for` loops to be
+executed in parallel. The documentation for matlab goes into much more
+detail; have a quick read, but don't worry about diving too deeply
+into the details. The essential property we need is that a statement of the form:
 
 ``` matlab
 for i=1:100
