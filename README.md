@@ -1,6 +1,8 @@
 HPCE 2014 - Coursework 1
 ========================
 
+Due Jan 27th, 23:59, via [blackboard](bb.imperial.ac.uk)
+
 The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://github.com/HPCE/hpce-2014-cw1)
 
 Getting started
