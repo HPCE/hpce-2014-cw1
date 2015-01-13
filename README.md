@@ -20,7 +20,7 @@ We will be working with github throughout the course, initially
 as a mode of distribution, but in somewhat more complicated
 ways later on.
 
-**As an alternative, hit "Download as Zip" to the right of this page.s**
+**As an alternative, hit "Download Zip" to the right of this page.**
 
 For now, you only really need to worry about the following:
 
