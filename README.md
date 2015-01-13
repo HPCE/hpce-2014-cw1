@@ -20,8 +20,6 @@ We will be working with github throughout the course, initially
 as a mode of distribution, but in somewhat more complicated
 ways later on.
 
-**As an alternative, hit "Download Zip" to the right of this page.**
-
 For now, you only really need to worry about the following:
 
 1. This document and supporting code are part of a **repository**
@@ -46,6 +44,8 @@ repositories, see this brief [intro to Git](background-git.md).
 You also have the ability to commit within your local repository,
 which allows you to track changes that you are making. I
 would encourage you to do this, but it is not required.
+
+**As an alternative, hit "Download Zip" to the right of this page.**
 
 Also, for those of you who have used git/github
 before, please do not fork into a publically visible
