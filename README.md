@@ -1,7 +1,7 @@
 HPCE 2014 - Coursework 1
 ========================
 
-Due Jan 27th, 23:59, via [blackboard](bb.imperial.ac.uk)
+Due Jan 27th, 23:59, via [blackboard](https://bb.imperial.ac.uk)
 
 The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://github.com/HPCE/hpce-2014-cw1)
 
@@ -40,6 +40,13 @@ For now, you only really need to worry about the following:
     
 For more information on git, and how you can work with
 repositories, see this brief [intro to Git](background-git.md).
+
+As has been suggested (thanks darioml), it is possible to simply
+download this repository as a zip, but it is much better to clone it:
+
+- It helps you to get started with git.
+- When there are updates (and that is very likely), you'll be able to
+  integrate back into your working copy.
 
 You also have the ability to commit within your local repository,
 which allows you to track changes that you are making. I
@@ -149,7 +156,7 @@ option on matlab figures, which supports direct pdf generation.
 E1 - Timing
 -----------
 
-_Before starting this, you may wish to look at [timing-background.md|timing-background.md]
+Before starting this, you may wish to look at [background-timing.md](bakground-timing.md]
 
 In the +timing directory, there is a very simple
 function called `function_time_simple`, which is
@@ -1052,3 +1059,7 @@ Submission steps:
 
 4. Submit the zip via blackboard.
 
+Credits
+=======
+
+- darioml : For various improvements to specification syntax.
