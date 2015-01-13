@@ -61,7 +61,7 @@ does _not_ check that all the functions are correct - the main
 goal is to reduce the turnaround time for marking, and to eliminate
 small problems with incorrect file names, or missing pdfs.
 
-Submission will be via blackboard.
+Submission will be via [blackboard](https://bb.imperial.ac.uk).
 
 ### Correctness
 
@@ -151,7 +151,7 @@ option on matlab figures, which supports direct pdf generation.
 E1 - Timing
 -----------
 
-_Before starting this, you may wish to look at [timing-background.md|timing-background.md]
+Before starting this, you may wish to look at [background-timing.md](background-timing.md).
 
 In the +timing directory, there is a very simple
 function called `function_time_simple`, which is
