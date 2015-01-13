@@ -20,6 +20,8 @@ We will be working with github throughout the course, initially
 as a mode of distribution, but in somewhat more complicated
 ways later on.
 
+'''As an alternative, hit "Download as Zip" to the right of this page.s'''
+
 For now, you only really need to worry about the following:
 
 1. This document and supporting code are part of a **repository**
