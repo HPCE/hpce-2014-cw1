@@ -150,7 +150,8 @@ people don't optimise these steps out in the interest of time.
 You do _not_ have to stick to the specific parameters I have
 given, and in fact I encourage you to explore the ranges of
 `n` and the exact functions you time in order to get the best
-graphs for your machine.
+graphs for your machine. If you want to have multiple figures
+one one plot, then go for it.
 
 The requirement on file size is to stop people
 taking... interesting... approaches to producing pdfs.
@@ -167,6 +168,9 @@ Previous submissions have seen people:
    
 Please don't be that person. There is a `File -> Save As`
 option on matlab figures, which supports direct pdf generation.
+Unless you have a huge number of points in your plot you
+should come in at well under 256KB - it is somewhat difficult
+to get the file size above 100KB for these kinds of graphs.
 
 E1 - Timing
 -----------
@@ -268,9 +272,12 @@ f4=@(n)( rand(n)*rand(n) );
 timing.plot_function_time_against_n( { f1, f2, f3, f4 } );
 ```
 
-**Save as**: figures/e1_2_comparison.pdf
+**Save as**: figures/e1_2_scaling.pdf
 
-or to compare the scalability of one function in different ways:
+_Note_: This originally said "figures/e1_2_comparison.pdf", but
+`prepare_submission.m` used the scaling name.
+
+To compare the scalability of one function in different ways, do:
 
 ``` matlab
 f=@(x,y)( randn(x)^y );
@@ -561,7 +568,9 @@ fwide=@(n)( render.apply_scalar_par_outer( @effects.invert_scalar, 0, rand(8,n) 
 timing.plot_function_time_against_n({ftall,fwide}, 2.^(3:16), 5);
 ```
 
-**Save as**: figures/e3_2_scaling_versus_aspect.m
+**Save as**: figures/e3_2_scaling_versus_aspect.pdf
+
+(_note: Originally had the wrong extension ".m")
 
 How is it different in terms of:
 
@@ -1076,5 +1085,8 @@ Submission steps:
 
 Credits
 =======
+
+- darioml : Pointing out the mis-match between filename in the
+  readme and in `prepare_submission.m`.
 
 - darioml : For various improvements to specification syntax.
