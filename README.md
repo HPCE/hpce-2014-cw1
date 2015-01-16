@@ -196,8 +196,15 @@ function [t]=function_time(f)
 % 
 %  f : A function with no inputs
 % 
-% The timing accuracy is 10% or better. This function supports
-% execution times of f from micro-seconds to minutes efficiently.
+% The timing accuracy is 10% or better. So if the true time is
+% "t" and the measured time is "m", it should attempt to ensure
+% that abs((m-t)/t) < 0.1". This function supports
+% execution times of f from micro-seconds to minutes
+% efficiently.
+%
+% The user of this function takes on responsibility for
+% making sure that the machine is not loaded, and that
+% frequency scaling is turned off.
 %    
 % Examples:
 %  
