@@ -67,8 +67,6 @@ You also have the ability to commit within your local repository,
 which allows you to track changes that you are making. I
 would encourage you to do this, but it is not required.
 
-**As an alternative, hit "Download Zip" to the right of this page.**
-
 Also, for those of you who have used git/github
 before, please do not fork into a publically visible
 repository. It is best to limit opportunities for
@@ -83,7 +81,7 @@ does _not_ check that all the functions are correct - the main
 goal is to reduce the turnaround time for marking, and to eliminate
 small problems with incorrect file names, or missing pdfs.
 
-Submission will be via [blackboard](https://bb.imperial.ac.uk).
+Submission will be via blackboard.
 
 ### Correctness
 
