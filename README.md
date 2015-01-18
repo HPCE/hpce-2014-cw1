@@ -1,9 +1,24 @@
 HPCE 2014 - Coursework 1
 ========================
 
-Due Jan 27th, 23:59, via [blackboard](bb.imperial.ac.uk)
+Due Jan 27th, 23:59, via [blackboard](https://bb.imperial.ac.uk)
 
 The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://github.com/HPCE/hpce-2014-cw1)
+
+The next three courseworks will be released on a week by week
+basis, with two weeks to do each:
+
+- CW2: Issued Jan 20th, due Feb 3rd
+- CW3: Issued Jan 27th, due Feb 10th
+- CW4: Issued Feb 3rd, due Feb 17th
+
+The last two courseworks do not overlap, and deadlines are:
+- CW5: Issued Feb 17th, due Mar 1st
+- CW6: Issued Mar 2nd, due Fri 13th
+
+The deadlines are designed to get out of the way
+of DoC revision and exams in weeks 10 and 11, and
+other coursework heavy end of term things.
 
 Getting started
 ----------------
@@ -40,6 +55,13 @@ For now, you only really need to worry about the following:
     
 For more information on git, and how you can work with
 repositories, see this brief [intro to Git](background-git.md).
+
+As has been suggested (thanks darioml), it is possible to simply
+download this repository as a zip, but it is much better to clone it:
+
+- It helps you to get started with git.
+- When there are updates (and that is very likely), you'll be able to
+  integrate back into your working copy.
 
 You also have the ability to commit within your local repository,
 which allows you to track changes that you are making. I
@@ -130,7 +152,8 @@ people don't optimise these steps out in the interest of time.
 You do _not_ have to stick to the specific parameters I have
 given, and in fact I encourage you to explore the ranges of
 `n` and the exact functions you time in order to get the best
-graphs for your machine.
+graphs for your machine. If you want to have multiple figures
+one one plot, then go for it.
 
 The requirement on file size is to stop people
 taking... interesting... approaches to producing pdfs.
@@ -147,6 +170,9 @@ Previous submissions have seen people:
    
 Please don't be that person. There is a `File -> Save As`
 option on matlab figures, which supports direct pdf generation.
+Unless you have a huge number of points in your plot you
+should come in at well under 256KB - it is somewhat difficult
+to get the file size above 100KB for these kinds of graphs.
 
 E1 - Timing
 -----------
@@ -172,8 +198,15 @@ function [t]=function_time(f)
 % 
 %  f : A function with no inputs
 % 
-% The timing accuracy is 10% or better. This function supports
-% execution times of f from micro-seconds to minutes efficiently.
+% The timing accuracy is 10% or better. So if the true time is
+% "t" and the measured time is "m", it should attempt to ensure
+% that abs((m-t)/t) < 0.1". This function supports
+% execution times of f from micro-seconds to minutes
+% efficiently.
+%
+% The user of this function takes on responsibility for
+% making sure that the machine is not loaded, and that
+% frequency scaling is turned off.
 %    
 % Examples:
 %  
@@ -248,9 +281,12 @@ f4=@(n)( rand(n)*rand(n) );
 timing.plot_function_time_against_n( { f1, f2, f3, f4 } );
 ```
 
-**Save as**: figures/e1_2_comparison.pdf
+**Save as**: figures/e1_2_scaling.pdf
 
-or to compare the scalability of one function in different ways:
+_Note_: This originally said "figures/e1_2_comparison.pdf", but
+`prepare_submission.m` used the scaling name.
+
+To compare the scalability of one function in different ways, do:
 
 ``` matlab
 f=@(x,y)( randn(x)^y );
@@ -541,7 +577,9 @@ fwide=@(n)( render.apply_scalar_par_outer( @effects.invert_scalar, 0, rand(8,n) 
 timing.plot_function_time_against_n({ftall,fwide}, 2.^(3:16), 5);
 ```
 
-**Save as**: figures/e3_2_scaling_versus_aspect.m
+**Save as**: figures/e3_2_scaling_versus_aspect.pdf
+
+(_note: Originally had the wrong extension ".m")
 
 How is it different in terms of:
 
@@ -1054,3 +1092,10 @@ Submission steps:
 
 4. Submit the zip via blackboard.
 
+Credits
+=======
+
+- darioml : Pointing out the mis-match between filename in the
+  readme and in `prepare_submission.m`.
+
+- darioml : For various improvements to specification syntax.
