@@ -333,7 +333,7 @@ edge detection kernel. The function should calclate the vertical
 and horizontal strength G_x and G_y, then combine them into the
 output pixel using the mapping:
 
-    G = sqrt(G_x^2+G_y^2));
+    G = sqrt(G_x^2+G_y^2);
     pixel = min(G/8, 1);
     
 An example of reference output is included as `+effects/cameraman.scharr.ref.png`,
