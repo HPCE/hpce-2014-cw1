@@ -374,7 +374,7 @@ The median kernel replaces each pixel with the median of
 the pixels in the window, which removes noise, but tends
 to retain edges: http://en.wikipedia.org/wiki/Median_filter
 
-Add a function `+effects/median_filter.m` which implements a per-pixel
+Add a function `+effects/median_scalar.m` which implements a per-pixel
 median filter. The filter should be able to deal with any
 odd-sized window, e.g. 1x1 (border=0), 3x3 (border=1), 11x11 (border=5).
 
