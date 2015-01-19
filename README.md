@@ -175,10 +175,10 @@ to get the file size above 100KB for these kinds of graphs.
 E1 - Timing
 -----------
 
-Before starting this, you may wish to look at [background-timing.md](bakground-timing.md]
+Before starting this, you may wish to look at [background-timing.md](background-timing.md).
 
 In the +timing directory, there is a very simple
-function called `function_time_simple`, which is
+function called `simple_function_time`, which is
 just a wrapper round `tic` and `toc`. It takes a
 single function with no parameters, and returns the
 execution time. To see it in use on various functions,
@@ -187,7 +187,7 @@ run the script `timing.demo`.
 ### E1.1 - Reliable Timing
 
 Add a file called `+timing/function_time.m`, with the
-same prototype as `function_time_simple` plus some
+same prototype as `simple_function_time` plus some
 additional accuracy constraints:
 
 ``` matlab
