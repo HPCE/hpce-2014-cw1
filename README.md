@@ -438,7 +438,7 @@ function [out] = render_blur(in)
 %  This function is defined by equivalence with scalar_apply and blur_scalar:
 %  > [o1]=render.apply_scalar(@effects.blur_scalar, 1, im);
 %  > [o2]=effects.render_blur(im);
-%  > assert(o1==o2);
+%  > assert(all(all(o1==o2)));
 %
 %  As much as possible this should be a simple de-abstraction, with the
 %  body of effects.blur_scalar inserted directly into render.apply_scalar,
@@ -498,7 +498,7 @@ on the output of `something(5)`.
 ### E3.1 - Parallelising the inner loop
 
 Create a new function `+render/apply_scalar_par_inner.m`, based
-on the original 'render.apply_scalar`. Modify the function so that
+on the original `render.apply_scalar`. Modify the function so that
 the inner loop over x, is now a `parfor` loop (it is exactly
 as easy as it sounds).
 
@@ -562,7 +562,7 @@ timing.plot_function_time_against_n({f1,f2}, 0:24, 60);
 How do you explain the behaviour of the sequential version? similarly,
 how do you explain the behaviour of the parallel version?
 
-### E3.2 - Parallelising the inner loop
+### E3.2 - Parallelising the outer loop
 
 Create another new function `+render/apply_scalar_par_outer.m`, based
 on the original `render.apply_scalar` . Modify the function so that
