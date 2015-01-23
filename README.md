@@ -8,7 +8,7 @@ The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://
 The next three courseworks will be released on a week by week
 basis, with two weeks to do each:
 
-- CW2: Issued Jan 20th, due Feb 3rd
+- [CW2](https://github.com/HPCE/hpce-2014-cw1): Issued Jan 20th, due Feb 3rd
 - CW3: Issued Jan 27th, due Feb 10th
 - CW4: Issued Feb 3rd, due Feb 17th
 
