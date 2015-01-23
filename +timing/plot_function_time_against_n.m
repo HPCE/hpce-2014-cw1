@@ -46,8 +46,31 @@ timing.add_linear_and_quadratic_lines_to_plot();
 legend({names}, 'Interpreter', 'none');
 
 arch= computer('arch');
-matlabpool SIZE;
-nWorkers=ans;
+
+
+% Try to adapt to different matlab versions
+% Start older
+try
+    matlabpool SIZE;
+    nWorkers=ans;
+catch
+    nWorkers=nan();
+end
+
+%else try newer
+if isnan(nWorkers)
+    try
+        poolobj=gcp('nocreate');
+        if ~isempty(poolobj)
+            nWorkers=poolobj.NumWorkers;
+        else
+            nWorkers=0;
+        end
+    catch
+        nWorkers=0;
+    end
+end
+    
 if nWorkers==0
     nWorkers='None';
 else
