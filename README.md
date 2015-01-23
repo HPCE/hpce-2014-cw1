@@ -437,7 +437,7 @@ function [out] = render_blur(in)
 %
 %  This function is defined by equivalence with scalar_apply and blur_scalar:
 %  > [o1]=render.apply_scalar(@effects.blur_scalar, 1, im);
-%  > [o2]=render.render_blur(im);
+%  > [o2]=effects.render_blur(im);
 %  > assert(o1==o2);
 %
 %  As much as possible this should be a simple de-abstraction, with the
