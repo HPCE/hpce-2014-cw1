@@ -239,9 +239,11 @@ function [ts,ns]=function_time_against_n(f, ns, maxTime)
 %  This function calculates the changing execution time for a
 %  function of a single parameter, as that parameter takes on
 %  a vector of increasing values. The total time used to calculate
-%  calculate times should be (approximately) bounded by the maxTime
-%  parameter. The function should investigate as many data-points as
-%  possible - if time runs out, all remaining ts values should be NaN (Not a Number).
+%  the times should be (approximately) bounded by the maxTime
+%  parameter, so if maxTime is 60, then the user is willing to wait
+%  one minute for function_time_against_n to complete. The function
+%  should investigate as many data-points as possible - if time runs out, all
+%  remaining ts values should be NaN (Not a Number).
 %
 %  Usage:
 %
