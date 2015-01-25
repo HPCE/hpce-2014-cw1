@@ -370,6 +370,20 @@ Hint:
 - Use the reference image as a comparison against yours. You can
   easily load images and subtract them.
 
+- There is a format conversion when saving to png, which will
+  result in very small differences due to round-tripping between
+  integer and double. I will use the command:
+
+      all(all( abs(ref-got) < 0.01 ))
+
+  to compare them.
+  
+_Note: the expectation is that it is possible to get exactly the same results,
+but don't worry if you can't; move on and tackle the later parts, then come
+back later._
+
+Thanks to @davidfof13, @darioml, and @kronocharia for the comments on this in issue #13.
+
 ### E2.2 - Add a median kernel
 
 The median kernel replaces each pixel with the median of
