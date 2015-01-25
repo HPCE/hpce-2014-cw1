@@ -222,6 +222,8 @@ Hints:
   
 - How do you make sure that "slow" functions are still timed "efficiently"?
 
+- There was some discussion of what it means to be "accurate" in Issue [#4](https://github.com/HPCE/hpce-2014-cw1/issues/4)
+
 ### E1.2 - Scaling of performance
 
 Create a function called `+timing/function_time_against_n.m`
@@ -260,8 +262,6 @@ Hints:
 - The function `nan` can be used to create a vector of NaN values of chosen size.
 
 - When you need to measure two overlapping time-spans, you can use the 'tId=tic(); t=toc(tId)' form.
-
-- There was some discussion of what it means to be "accurate" in Issue #4.
 
 ### Discussion
 
