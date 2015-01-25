@@ -384,7 +384,7 @@ _Note: the expectation is that it is possible to get exactly the same results,
 but don't worry if you can't; move on and tackle the later parts, then come
 back later._
 
-Thanks to @davidfof13, @darioml, and @kronocharia for the comments on this in issue #13.
+Thanks to @davidfof13, @darioml, and @kronocharia for the comments on this in issue [#13](https://github.com/HPCE/hpce-2014-cw1/issues/13).
 
 ### E2.2 - Add a median kernel
 
