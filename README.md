@@ -1,7 +1,7 @@
 HPCE 2014 - Coursework 1
 ========================
 
-Due Jan 27th, 23:59, via [blackboard](https://bb.imperial.ac.uk)
+Due Jan 27th, 23:59, via [blackboard](https://bb.imperial.ac.uk) (the asssesments link is now visible in blackboard).
 
 The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://github.com/HPCE/hpce-2014-cw1)
 
