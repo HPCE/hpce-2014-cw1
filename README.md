@@ -261,6 +261,8 @@ Hints:
 
 - When you need to measure two overlapping time-spans, you can use the 'tId=tic(); t=toc(tId)' form.
 
+- There was some discussion of what it means to be "accurate" in Issue #4.
+
 ### Discussion
 
 Once your 'function_time_against_n' function works, you can
