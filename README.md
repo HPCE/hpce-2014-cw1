@@ -1073,6 +1073,9 @@ Hints:
         out=[out ; localOut];
     end
     ```
+    
+  There is some discussion about whether this is a legal use of
+  a parfor in [issue #18](https://github.com/HPCE/hpce-2014-cw1/issues/18).
 
 - Matlab will warn about having to send the entire input image
   to every parallel worker. It will be happier (at least
