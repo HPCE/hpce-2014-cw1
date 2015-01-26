@@ -1082,7 +1082,7 @@ Hints:
   
 - Draw pictures of the for loops and matrices.
 
-### 5.2 - Optimal version
+### 5.3 - Optimal version
 
 Create a function `+render/apply_vector_opt.m`, which
 uses any techniques you think appropriate to get the
