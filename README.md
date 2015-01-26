@@ -451,7 +451,7 @@ prototype and behaviour:
 function [out] = render_blur(in)
 % render_blur Directly blurs an image
 %
-%  This function is defined by equivalence with scalar_apply and blur_scalar:
+%  This function is defined by equivalence with apply_scalar and blur_scalar:
 %  > [o1]=render.apply_scalar(@effects.blur_scalar, 1, im);
 %  > [o2]=effects.render_blur(im);
 %  > assert(all(all(o1==o2)));
