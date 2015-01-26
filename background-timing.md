@@ -47,7 +47,7 @@ The variable `f` now contains a function which we can
 call with a single argument, so let's try the unrepeated
 version again:
 
-    for i=1:10, tic; f(i); end; toc; end
+    for i=1:10, tic; f(i); toc; end
 
 I can't predict what results you'll see, as it depends
 on the version of matlab, your CPU, your OS, and a
