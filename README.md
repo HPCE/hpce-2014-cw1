@@ -5,21 +5,6 @@ Due Jan 27th, 23:59, via [blackboard](https://bb.imperial.ac.uk) (the asssesment
 
 The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://github.com/HPCE/hpce-2014-cw1)
 
-The next three courseworks will be released on a week by week
-basis, with two weeks to do each:
-
-- [CW2](https://github.com/HPCE/hpce-2014-cw1): Issued Jan 20th, due Feb 3rd
-- CW3: Issued Jan 27th, due Feb 10th
-- CW4: Issued Feb 3rd, due Feb 17th
-
-The last two courseworks do not overlap, and deadlines are:
-- CW5: Issued Feb 17th, due Mar 1st
-- CW6: Issued Mar 2nd, due Fri 13th
-
-The deadlines are designed to get out of the way
-of DoC revision and exams in weeks 10 and 11, and
-other coursework heavy end of term things.
-
 Getting started
 ----------------
 
