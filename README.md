@@ -1,9 +1,24 @@
-HPCE 2014 - Coursework 1
+HPCE 2015 - Coursework 1
 ========================
 
-Due Jan 27th, 23:59, via [blackboard](https://bb.imperial.ac.uk) (the asssesments link is now visible in blackboard).
+Due Oct 26th, 22:00, via [blackboard](https://bb.imperial.ac.uk).
 
-The live version of this document can be found at: [HPCE/hpce-2014-cw1](https://github.com/HPCE/hpce-2014-cw1)
+The live version of this document can be found at: [HPCE/hpce-2015-cw1](https://github.com/HPCE/hpce-2015-cw1)
+
+The next three courseworks will be released on a week by week
+basis, with two weeks to do each:
+
+- CW2: Issued Oct 19th, due Nov 2nd
+- CW3: Issued Nov 26th, due Nov 9th
+- CW4: Issued Nov 2nd,  due Nov 16th
+
+The last two courseworks do not overlap, and deadlines are:
+- CW5: Issued Nov 16th, due Nov 30th
+- CW6: Issued Nov 30th, due Dec 11th
+
+The deadlines are designed to get out of the way
+of DoC exams in week 11, and other coursework-heavy
+end of term things.
 
 Getting started
 ----------------
@@ -23,7 +38,7 @@ ways later on.
 For now, you only really need to worry about the following:
 
 1. This document and supporting code are part of a **repository**
-    called `hpce-2014-cw1`.
+    called `hpce-2015-cw1`.
     
 2. The repository tracks changes I make to files in the repository,
     recording each set of changes as a **commit**.
@@ -41,7 +56,7 @@ For now, you only really need to worry about the following:
 For more information on git, and how you can work with
 repositories, see this brief [intro to Git](background-git.md).
 
-As has been suggested (thanks darioml), it is possible to simply
+As has been suggested, it is possible to simply
 download this repository as a zip, but it is much better to clone it:
 
 - It helps you to get started with git.
@@ -74,11 +89,7 @@ Correctness is much more important than performance. Everything
 in this exercise should either result in a function that produces
 exactly the same output as a previous function, or there is
 a known good output against which it can be compared.
-
-Last year I spent some time trying to force students to
-check their code worked (partially successful), but this
-year I'll just leave it up to you. The only coments I'll
-make are:
+The only notes I'll make are:
 
 - Checking image `im1` is identical to image `im2` is as simple 
   as `assert(all(all(im1==im2)))`.
@@ -206,8 +217,6 @@ Hints:
   timing resolution are compensated for?
   
 - How do you make sure that "slow" functions are still timed "efficiently"?
-
-- There was some discussion of what it means to be "accurate" in Issue [#4](https://github.com/HPCE/hpce-2014-cw1/issues/4)
 
 ### E1.2 - Scaling of performance
 
@@ -368,8 +377,6 @@ Hint:
 _Note: the expectation is that it is possible to get exactly the same results,
 but don't worry if you can't; move on and tackle the later parts, then come
 back later._
-
-Thanks to @davidfof13, @darioml, and @kronocharia for the comments on this in issue [#13](https://github.com/HPCE/hpce-2014-cw1/issues/13).
 
 ### E2.2 - Add a median kernel
 
@@ -1058,9 +1065,6 @@ Hints:
         out=[out ; localOut];
     end
     ```
-    
-  There is some discussion about whether this is a legal use of
-  a parfor in [issue #18](https://github.com/HPCE/hpce-2014-cw1/issues/18).
 
 - Matlab will warn about having to send the entire input image
   to every parallel worker. It will be happier (at least
@@ -1095,11 +1099,3 @@ Submission steps:
 3. Think again: "have I actually tested my functions?"
 
 4. Submit the zip via blackboard.
-
-Credits
-=======
-
-- darioml : Pointing out the mis-match between filename in the
-  readme and in `prepare_submission.m`.
-
-- darioml : For various improvements to specification syntax.

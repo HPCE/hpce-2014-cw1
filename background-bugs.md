@@ -4,11 +4,11 @@ Feedback on Coursework
 Bugs, questions and suggestions
 -------------------------------
 
-This coursework is new for this year (as most will be), as
-I try to balance learning of concepts versus the amount
-of work done. As a consequence, there are likely to be
-problems with the coursework. That is fine, and to
-be expected - you are all masters-level students.
+This coursework is in its second year, though others
+will be new this year. The previous years students
+were very helpful, and we fixed a lot of bugs. However,
+other may remain. That is fine, and some level of
+imperfction is fine - you are all masters-level students.
 
 Typical types of feedback I'm interested in on this
 (and all courseworks) are:
@@ -60,7 +60,7 @@ In order of preference, your options are:
    (don't worry if you don't know what that means).
 
 2. File an issue: you can report problems or ask questions on the
-   [issues](https://github.com/HPCE/hpce-2014-cw1/issues) page.
+   [issues](https://github.com/HPCE/hpce-2015-cw1/issues) page.
    This allows everyone to see it, so everyone can benefit.
 
 3. Ask me: asking questions in/after lectures is a good
